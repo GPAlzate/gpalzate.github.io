@@ -1,11 +1,13 @@
 module.exports = function(eleventyConfig) {
-    // non-11ty template files
-    eleventyConfig.addPassthroughCopy('./src/tufte.css')
+    // non-11ty-template files
+    eleventyConfig.addPassthroughCopy('src/assets/')
+    eleventyConfig.addPassthroughCopy('src/css/')
 
-    // default output is _site
     return {
         dir: {
-            input: "src"
+            input: "src",
+            includes: "_includes",
+            output: "_site"
         }
     }
 }
