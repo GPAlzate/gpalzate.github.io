@@ -56,14 +56,13 @@ body {
     counter-reset: sidenote-counter;
 }
 
-/* TODO: Adds dark mode
-@media (prefers-color-scheme: dark) {
+/* TODO: Adds dark mode */
+/* @media (prefers-color-scheme: dark) {
     body {
         background-color: #151515;
         color: #ddd;
     }
-}
-*/
+} */
 
 h1 {
     font-weight: 400;
@@ -257,13 +256,12 @@ a:link, .tufte-underline, .hover-tufte-underline:hover {
     }
 }
 
-/* TODO: Adds dark mode
-@media (prefers-color-scheme: dark) {
+/* TODO: Adds dark mode */
+/* @media (prefers-color-scheme: dark) {
     a:link, .tufte-underline, .hover-tufte-underline:hover {
         text-shadow: 0.03em 0 #151515, -0.03em 0 #151515, 0 0.03em #151515, 0 -0.03em #151515, 0.06em 0 #151515, -0.06em 0 #151515, 0.09em 0 #151515, -0.09em 0 #151515, 0.12em 0 #151515, -0.12em 0 #151515, 0.15em 0 #151515, -0.15em 0 #151515;
     }
-}
-*/
+} */
 
 a:link::selection,
 a:link::-moz-selection {
@@ -296,12 +294,14 @@ img {
 
 .sidenote-number:after,
 .sidenote:before {
+    color: red;
     font-family: et-book-roman-old-style;
     position: relative;
     vertical-align: baseline;
 }
 
 .sidenote-number:after {
+    color: red;
     content: counter(sidenote-counter);
     font-size: 1rem;
     top: -0.5rem;
