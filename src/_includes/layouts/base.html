@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
     <!-- head metadata -->
-    <head>
-        {% include "partials/head.html" %}
-    </head>
+    {% include "partials/head.html" %}
 
     <!-- body content -->
     <body>
-        {{ content }}
+        <article>
+            <!-- TODO: header nav -->
+            <!-- {% include "partials/header_nav.html" %} -->
+
+            <!-- page title -->
+            {% block pageTitle %}
+            {% endblock %}
+
+            <!-- main content -->
+            {{ content | safe }}
+
+            <!-- horizontal line + footer -->
+            <hr />
+            {% include "partials/footer.html" %}
+        </article>
     </body>
-
-    <hr />
-
-    <!-- footer -->
-    <section>
-        {% include "partials/footer.html" %}
-    </section>
 </html>

@@ -39,6 +39,12 @@
     font-display: swap;
 }
 
+/* personal additions */
+header > nav > a {
+    font-size: 1.5rem;
+    font-variant: small-caps;
+}
+
 /* Tufte CSS styles */
 html {
     font-size: 15px;

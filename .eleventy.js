@@ -3,16 +3,15 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy('src/assets/')
     eleventyConfig.addPassthroughCopy('src/css/')
 
-    // eleventy-dev-server options
-    eleventyConfig.setServerOptions({
-        watch: ["src/**/*.html", "_site/**/*.html"]
-    });
-
     return {
         dir: {
             input: "src",
             includes: "_includes",
             output: "_site"
-        }
+        },
+        templateFormats: ["html"],
+        htmlTemplateEngine: "njk",
+        markdownTemplateEngine: "njk",
+        dataTemplateEngine: "njk"
     }
 }
