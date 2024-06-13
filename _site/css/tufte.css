@@ -39,11 +39,21 @@
     font-display: swap;
 }
 
-/* personal additions */
+/* personal additions START */
+header > nav {
+    display: flex;       /* Use flexbox for layout control */
+    flex-wrap: wrap;     /* Allow wrapping of nav items */
+    row-gap: 1rem;       /* Adjust vertical spacing between rows */
+}
+
 header > nav > a {
     font-size: 1.5rem;
     font-variant: small-caps;
+    letter-spacing: 0.12em;
+    margin-right: 3vw;
+    white-space: nowrap;
 }
+/* personal additions END */
 
 /* Tufte CSS styles */
 html {
@@ -79,7 +89,7 @@ h1 {
 }
 
 h2 {
-    font-style: italic;
+    font-variant: small-caps;
     font-weight: 400;
     margin-top: 2.1rem;
     margin-bottom: 1.4rem;

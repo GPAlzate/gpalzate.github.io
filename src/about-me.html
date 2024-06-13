@@ -1,0 +1,25 @@
+---
+layout: layouts/base.html
+title: "about me"
+---
+{% from "partials/page_title.html" import title %}
+{% from "partials/sidenote.html" import sidenote %}
+
+{% block pageTitle %}
+    {{ title("About me...") | safe }}
+{% endblock %}
+<section>
+    <p>
+        <span class="newthought">...on second thought, let's just chat </span>😄. I decided to put an "About me" page because
+         I felt that the TLDR story I left at <a href="/"><code>HOME</code></a> was a little lacking. But can one's whole life story really 
+         be captured on the ones and zeroes of a webpage? If you want to talk more about my life or yours, please reach out! 
+         I left my email for you at <a href="/"><code>HOME</code></a> as well. For more conversation starters, below is a stream of consciousness
+         of everything that I like, and everything that is me 😌{{
+            sidenote("emoji", "emojis are the written equivalent of the non-verbal communication in daily conversation to convey more layers of meaning. if the (possibly excessive) presence of emojis in this website feels out of place, know that I am simply writing as I would speak 😅!")
+         }}. Enjoy!
+    </p>
+</section>
+<section>
+    <h2>My simple pleasures</h2>
+    <hr />
+</section>
