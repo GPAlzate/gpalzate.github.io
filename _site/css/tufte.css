@@ -53,6 +53,38 @@ header > nav > a {
     margin-right: 3vw;
     white-space: nowrap;
 }
+
+h4 {
+    font-variant: small-caps;
+    font-weight: bold;
+    font-size: 1.6rem;
+    margin-bottom: 1.4rem;
+    line-height: 1;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 4px 0;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+}
+
+thead tr:last-child th {
+    border-bottom: 1px solid black;
+}
+
+th, td {
+    padding: 0.6em;
+}
+
+td {
+    text-align: left;
+}
+
+td:last-child {
+    text-align: right;
+}
+
 /* personal additions END */
 
 /* Tufte CSS styles */
