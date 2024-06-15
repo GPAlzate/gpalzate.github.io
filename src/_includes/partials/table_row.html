@@ -1,0 +1,15 @@
+{% macro row(entries) %}
+    <tr>
+    {% for entry in entries %}
+        <td>{{ entry | safe }}</td>
+    {% endfor %}
+    </tr>
+{% endmacro %}
+
+{% macro header(entries) %}
+    <tr>
+    {% for entry in entries %}
+        <th>{{ entry | safe }}</th>
+    {% endfor %}
+    </tr>
+{% endmacro %}
