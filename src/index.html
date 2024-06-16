@@ -2,8 +2,8 @@
 layout: layouts/base.html
 title: "hi, it's gabe!"
 ---
-{% from "partials/sidenote.html" import sidenote %}
 {% from "partials/page_title.html" import title %}
+{% from "partials/sidenote.html" import sidenote %}
 
 {% block pageTitle %}
     {{ title("Hey there!👋") | safe }}
@@ -24,7 +24,7 @@ title: "hi, it's gabe!"
     </p>
     <p>
         In my free time I enjoy learning new instruments{{
-            sidenote("music", "most recently, the <a href='https://en.wikipedia.org/wiki/Kashaka'>kashakas</a>, to try and expand my horizons beyond traditional Western instruments.")
+            sidenote("music", "most recently: the <a href='https://en.wikipedia.org/wiki/Kashaka'>kashakas</a>, to try and expand my horizons beyond traditional Western musical instruments.")
         }}, making latte art, and playing badminton~
     </p>
     <p>

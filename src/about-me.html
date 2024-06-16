@@ -1,0 +1,58 @@
+---
+layout: layouts/base.html
+title: "about me"
+---
+{% from "partials/page_title.html" import title %}
+{% from "partials/sidenote.html" import sidenote %}
+{% from "partials/table_row.html" import row, header %}
+
+{% block pageTitle %}
+    {{ title("About me...") | safe }}
+{% endblock %}
+<section>
+    <p>
+        <span class="newthought">...on second thought, let's just chat </span>😄. I decided to put an "About me" page because
+         I felt that the TLDR story I left at <a href="/"><code>HOME</code></a> was a little lacking. But can one's whole life story really 
+         be captured on the ones and zeroes of a webpage? If you want to talk more about my life or yours, please reach out! 
+         I left my email at <a href="/"><code>HOME</code></a> as well. For more conversation starters, below is a stream of consciousness
+         of everything that I like, and everything that is me 😌{{
+            sidenote("emoji", "if the (possibly excessive) presence of emojis in this website feels anachronistic or out of place, just think of emojis as the written equivalent of non-verbal communication in daily conversation to convey more layers of meaning 🤔")
+         }}. Enjoy!
+    </p>
+</section>
+<section>
+    <h2>All things me</h2>
+    <hr />
+    <h3>Music</h3>
+    <p>
+        Trivial observation: the music we listen to is always either <i>a</i>) a new discovery, or <i>b</i>) a revisit of a familiar tune.
+        Our music tastes are always changing and I think they tell a lot about a person, so here are my current favorite songs for each of
+        these two categories.
+    </p>
+    <h4>Current favorite new discoveries</h4>
+    <table>
+        <thead>
+            {{ header(["Genre", "Title [+ English translation]", "Artist(s)"]) }}
+        </thead>
+        <tbody>
+            {{ row(["?", "<a href='https://www.youtube.com/playlist?list=OLAK5uy_lNukJ7tBybfxEDbFGLz_KSehGwZLxeX70'>The entire Sunshower album</a>", "Couch"]) }}
+            {{ row(["Alt rock, city pop", "<a href='https://www.youtube.com/watch?v=BxqYUbNR-c0'>忘れられないの</a> [I can't forget]", "sakanaction"]) }}
+            {{ row(["Contemporary R&B", "<a href='https://www.youtube.com/watch?v=K58xo8lfRJc'>Secretly</a>", "Erika de Casier"]) }}
+            {{ row(["Country", "<a href='https://www.youtube.com/watch?v=TGkMYMxi-hw'>Deeper Well</a>", "Kacey Musgraves"]) }}
+            {{ row(["Video game music", "<a href='https://www.youtube.com/watch?v=v86DwYnVMPM&pp=ygUbcG9sbHV0ZWQgcGxhdG9vbiBwYXRoZmluZGVy'>Polluted Platoon Pathfinder</a>", "Felix Peaslee"]) }}
+        </tbody>
+    </table>
+    <h4>Current favorite familiar tunes</h4>
+    <table>
+        <thead>
+            {{ header(["Genre", "Title [+ English translation]", "Artist(s)"]) }}
+        </thead>
+        <tbody>
+            {{ row(["Ballad", "<a href='https://www.youtube.com/watch?v=6xcY-NJGdzg'>소녀 [Little Girl]</a>", "Lee Moon-sae"]) }}
+            {{ row(["Country rock", "<a href='https://www.youtube.com/watch?v=u1V8YRJnr4Q'>Have You Ever Seen the Rain</a>", "Creedence Clearwater Revival"]) }}
+            {{ row(["Funk", "<a href='https://www.youtube.com/watch?v=w9COHCrwNQs'>Smile Meditation</a>", "Vulfpeck"]) }}
+            {{ row(["Indie", "<a href='https://www.youtube.com/watch?v=k53_PziipaA'>KEEP IT UP</a>", "Rex Orange County"]) }}
+            {{ row(["Pop rock", "<a href='https://www.youtube.com/watch?v=4BJDNw7o6so'>Lisztomania</a>", "Phoenix"]) }}
+        </tbody>
+    </table>
+</section>
