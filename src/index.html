@@ -3,7 +3,7 @@ layout: layouts/base.html
 title: "hi, it's gabe!"
 ---
 {% from "partials/page_title.html" import title %}
-{% from "partials/sidenote.html" import sidenote %}
+{% from "partials/notes.html" import sidenote, marginnote %}
 
 {% block pageTitle %}
     {{ title("Hey there!👋") | safe }}

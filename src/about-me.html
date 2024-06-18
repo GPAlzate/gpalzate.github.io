@@ -3,10 +3,13 @@ layout: layouts/base.html
 title: "about me"
 ---
 {% from "partials/page_title.html" import title %}
-{% from "partials/sidenote.html" import sidenote %}
+{% from "partials/notes.html" import sidenote, marginnote %}
 {% from "partials/table_row.html" import row, header %}
 
-{% block pageTitle %}    {{ title("About me") | safe }}
+{% set srPaperUrl = '/assets/files/gabe_ann_bib.pdf' | url %}
+
+{% block pageTitle %}
+{{ title("About me") | safe }}
 {% endblock %}
 <section>
     <p>
@@ -18,7 +21,7 @@ title: "about me"
         my life or yours, please reach out! I left my email at <a href='/'><code>HOME</code></a> as well 🙂.
     </p>
     <p>
-        Anyway, in an attempt to capture who I am, below is a stream of consciousness of everything that I like, and everything that is me 😌{{
+        Anyway, as a glimpse into the elements that shape my identity, below is a stream of consciousness of everything that I like, and everything that is me 😌{{
             sidenote("emoji", "if the (possibly excessive) presence of emojis in this website feels anachronistic or out of place, just think of emojis as the written equivalent of non-verbal communication in daily conversation to convey more layers of meaning 🤔")
         }}. Enjoy!
     </p>
@@ -48,6 +51,100 @@ title: "about me"
             </code>
         </p>
     </blockquote>
+    <h3>Things I carry</h3>
+    <p>
+        I mean this in both the literal and figurative sense. The first part encompasses the physical and digital things I use that I can't live without.
+        The second part is dedicated to content&mdash;papers, websites, shows, etc.&mdash;that gave me new core memories{{
+            sidenote("core-memory", "popularized by Pixar's animated film <i><a href='https://www.youtube.com/watch?v=AXGhfYVAOKE&ab_channel=Pixar'>Inside Out</a></i>, 
+            a core memory is a memory of a moment so impactful that it
+            forms part of a one's identity. it's memed around a lot and it doesn't have much scientific basis (as far as I know),
+            but i think it's an intriguing concept nonetheless.")
+        }} after engaging with them.
+    <h4>My favorite things</h4>
+    <table>
+        <thead>
+            {{ header(["Type", "Name"]) }}
+        </thead>
+        <tbody>
+            {{
+                row([
+                "Badminton shoes",
+                "Yonex Power Cushion 65Z3" 
+                ])
+            }}
+            {{
+                row([
+                "Carbon steel pan",
+                "de Buyer Mineral B Pro"
+                ])
+            }}
+            {{
+                row([
+                "Mouse",
+                "MX Master 3 (or 3S)"
+                ])
+            }}
+            {{
+                row([
+                "Productivity app",
+                "<a href='https://www.raycast.com/'>Raycast</a>"
+                ])
+            }}
+            {{
+                row([
+                "Terminal",
+                "<a href='https://www.warp.dev/'>Warp</a>"
+                ])
+            }}
+            {{
+                row([
+                "Wallet",
+                "Secrid Slimwallet"
+                ])
+            }}
+        </tbody>
+    </table>
+    <h4>Inspirations</h4>
+    <table>
+        <thead>
+            {{ header(["Content", "Notes"]) }}
+        </thead>
+        <tbody>
+            {{
+                row([
+                "<a href='https://collectiveaction.tech/2024/what-to-do-if-you-get-piped/'>What to do if you get PIP'ed</a>",
+                "A friend set me this during a time when layoffs in tech were at an all-time high. Important read for anyone working in tech!" 
+                ])
+            }}
+            {{
+                row([
+                "<a href='https://www.youtube.com/watch?v=UmvOgW6iV2s&ab_channel=TED'>Txtng is killing language. JK!!!</a>",
+                "Showed me that language is not fixed, and we should treat it as something that evolves; i.e. <a href='https://en.wikipedia.org/wiki/Linguistic_description'>linguistic prescriptivism</a>."
+                ])
+            }}
+            {{
+                row([
+                "<a href='https://youtu.be/W3I3kAg2J7w?si=DFh7jZpfodoFuJsE'>What \"Follow Your Dreams\" Misses</a>",
+                "3Blue1Brown's Grant Sanderson in a commencement speech, talking about a common misconception of the \"follow your dreams\" advice."
+                ])
+            }}
+            {{
+                row([
+                "<a href='https://dl.acm.org/doi/10.1145/3544548.3580703'>SwitchTube: A Proof-of-Concept System Introducing “Adaptable Commitment Interfaces” as a Tool for Digital Wellbeing</a>",
+                "A paper that illustrates how the “smartphone distraction” problem can be addressed systemically via social media redesign, instead of individually through self-control/time limit apps."
+                ])
+            }}
+            {{
+                row([
+                "<a href='https://arxiv.org/pdf/2309.14534'>Teach AI How to Code: Using Large Language Models as Teachable Agents for Programming Education</a>",
+                "I wrote an annotated bibliography in college once (<a href='" 
+                    ~ srPaperUrl 
+                    ~ "'>here</a>, if you're curious) exploring the disconnect between undergraduate CS education and the software engineering skills needed in industry. <br /><br />
+                    Would been interesting to write about it now, amidst all the current hype around gen-AI."
+                ])
+            }}
+        </tbody>
+    </table>
     <h3>Music</h3>
     <p>
         Trivial observation: the music we listen to is always either <i>a</i>) a new discovery, or <i>b</i>) a revisit of a familiar tune.
@@ -80,4 +177,137 @@ title: "about me"
             {{ row(["Pop rock", "<a href='https://www.youtube.com/watch?v=4BJDNw7o6so'>Lisztomania</a>", "Phoenix"]) }}
         </tbody>
     </table>
-</section>
+    <h3>Eats</h3>
+    <p>
+        My favorite{{
+            sidenote('fried-chicken', 'pls excuse the bias towards fried chicken')
+        }} must-eats, by location :)
+    </p> 
+    <h4>Bay area</h4>
+    <table>
+        <thead>
+            {{ header(["Name", "Cuisine/Type", "Notes"]) }}
+        </thead>
+        <tbody>
+            {{
+                row([
+                "<a href='https://www.instagram.com/oh__dessertcafe/?hl=en'>OH Dessert Cafe</a>",
+                "Asian/Asian-flavored desserts",
+                "Favorites: ube crepe cake, banana dulce de leche cheescake"
+                ])
+            }}
+            {{
+                row([
+                "<a href='https://www.cafedecasa.com>'>Cafe de Casa</a>",
+                "Brazilian",
+                "Good combo: acai bowl + any savory pastry"
+                ])
+            }}
+            {{
+                row([
+                "<a href='https://www.dumplinghome.com/'>Dumpling Home</a>",
+                "Chinese",
+                "As other will also tell you, their <i>sheng jian bao</i> (pan-fried dumplings) are a must."
+                ])
+            }}
+            {{
+                row([
+                "<a href='https://moobongri.com/'>무봉리 Moo Bong Ri</a>",
+                "Korean",
+                "My favorite KFC, <i>galbi jjim</i> (braised beef short ribs), and <i>gamja tang</i> (pork-bone stew)
+                in the Bay."
+                ])
+            }}
+            {{
+                row([
+                "<a href='https://www.kailashparbatgroup.com'>Kailash Parbat</a>",
+                "North Indian",
+                "Appetizer: papdi chaat 🤌. Also, their lime soda is what I imagine Carmy's homemade Sprite from <i>The Bear</i> tastes like."
+                ])
+            }}
+            {{
+                row([
+                "<a href='https://www.shizensf.com/'>Shizen</a>",
+                "Vegan sushi",
+                "Personal favorites: Hidden Agenda, Boddy and Soul"
+                ])
+            }}
+        </tbody>
+    </table>
+    <h4>Metro manila</h4>
+    <table>
+        <thead>
+            {{ header(["Name", "Cuisine/Type"]) }}
+        </thead>
+        <tbody>
+            {{
+                row([
+                "<a href='https://www.instagram.com/manamph/?hl=en'>Manam</a>",
+                "Filipino"
+                ])
+            }}
+            {{
+                row([
+                "<i>Mga magtataho</i> (<i>taho</i> street vendors)",
+                "Filipino"
+                ])
+            }}
+            {{
+                row([
+                "<a href='https://www.pancakehouse.com.ph/'>Pancake House</a>",
+                "Comfort food"
+                ])
+            }}
+            {{
+                row([
+                "<a href='https://www.pekinggarden.com.ph/'>Peking Garden</a>",
+                "Northern Chinese"
+                ])
+            }}
+            {{
+                row([
+                "<a href='http://www.rich2015.in/'>Royal Indian Curry House</a>",
+                "North Indian"
+                ])
+            }}
+        </tbody>
+    </table>
+    <h4>Vancouver</h4>
+    <table>
+        <thead>
+            {{ header(["Name", "Cuisine/Type", "Notes"]) }}
+        </thead>
+        <tbody>
+            {{
+                row([
+                "<a href='https://www.chewiesbiscuitco.com/'>Chewie's Chicken and Biscuits</a>",
+                "Brunch",
+                "Their specialty: the fried chicken eggs benedict! Spicy recommended."
+                ])
+            }}
+            {{
+                row([
+                "<a href='https://thebigflatpancakecompany.com/'>The Big Flat Pancake, Co.</a>",
+                "American breakfast",
+                "Personally a big fan of strawberry + banana + nutella crepes, and they have a <i>really</i> good one"
+                ])
+            }}
+            {{
+                row([
+                "<a href='https://www.between2bunsburgers.ca/'>Between Two Buns</a>",
+                "Smash burgers",
+                "&larr; The best! 🤤"
+                ])
+            }}
+            {{
+                row([
+                "<a href='https://www.ddmau.ca/'>DD Mau</a>",
+                "Vietnamese",
+                "My favorite KFC, <i>galbi jjim</i> (braised beef short ribs), and <i>gamja tang</i> (pork-bone stew)
+                in the Bay."
+                ])
+            }}
+        </tbody>
+    </table>
+    </section>
+</p>

@@ -1,0 +1,15 @@
+{%- macro sidenote(id_label, sidenote) -%}
+<label for="{{ id_label }}-sidenote" class="margin-toggle sidenote-number"></label>
+<input type="checkbox" id="{{ id_label }}-sidenote" class="margin-toggle" />
+<span class="sidenote">
+    {{- sidenote | safe -}}
+</span>
+{%- endmacro -%}
+
+{%- macro marginnote(id_label, marginnote) -%}
+<label for="{{ id_label }}" class="margin-toggle">&#8853;</label>
+<input type="checkbox" id="{{ id_label }}" class="margin-toggle" />
+<span class="marginnote">
+    {{- marginnote | safe -}}
+</span>
+{%- endmacro -%}
