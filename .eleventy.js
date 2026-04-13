@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 module.exports = function(eleventyConfig) {
     // non-11ty-template files
     eleventyConfig.addPassthroughCopy('src/assets/')
