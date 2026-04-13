@@ -68,8 +68,14 @@ title: "about me"
         <tbody>
             {{
                 row([
+                "Backpack",
+                "Packolab City Carrier V2"
+                ])
+            }}
+            {{
+                row([
                 "Badminton shoes",
-                "Yonex Power Cushion 65Z3" 
+                "Yonex Power Cushion 65Z_" 
                 ])
             }}
             {{
@@ -80,26 +86,20 @@ title: "about me"
             }}
             {{
                 row([
-                "Mouse",
-                "MX Master 3 (or 3S)"
+                "Organizer",
+                "Evergoods CAP2"
                 ])
             }}
             {{
                 row([
-                "Productivity app",
-                "<a href='https://www.raycast.com/'>Raycast</a>"
-                ])
-            }}
-            {{
-                row([
-                "Terminal",
-                "<a href='https://www.warp.dev/'>Warp</a>"
+                "OS",
+                "PikaOS (yay, Linux!)"
                 ])
             }}
             {{
                 row([
                 "Wallet",
-                "Secrid Slimwallet"
+                "Frenchie Co Speed Wallet (Apple Blossom)"
                 ])
             }}
         </tbody>
@@ -114,6 +114,12 @@ title: "about me"
                 row([
                 "<a href='https://collectiveaction.tech/2024/what-to-do-if-you-get-piped/'>What to do if you get PIP'ed</a>",
                 "A friend set me this during a time when layoffs in tech were at an all-time high. Important read for anyone working in tech!" 
+                ])
+            }}
+            {{
+                row([
+                "<a href='https://harpers.org/archive/1932/10/in-praise-of-idleness/'>In Praise of Idleness</a>, an essay by Bertrand Russell",
+                "Why do we consider busyness, in and of itself, virtuous as opposed to a problem to be solved?"
                 ])
             }}
             {{
@@ -145,36 +151,44 @@ title: "about me"
     </table>
     <h3>Music</h3>
     <p>
-        Trivial observation: the music we listen to is always either <i>a</i>) a new discovery, or <i>b</i>) a revisit of a familiar tune.
-        Our music tastes are always changing and I think they tell a lot about a person, so here are my current favorite songs for each of
-        these two categories.
+    To be honest, I found myself changing this too often because my music taste is a little all over the place. So I thought: what better way to share my music taste than to show you what I'm listening to now{{sidenote('lastfm', "i mean <i>literally</i> now. i'm always listening to music, so odds are the song in the first row is playing as you're reading this.")}}! So below are the 5 most recently played songs, courtesy of LastFM.
     </p>
-    <h4>Current favorite new discoveries</h4>
+    <h4>What am I listening to?</h4>
+    {% if lastfm.recentTracks.length %}
     <table>
         <thead>
-            {{ header(["Genre", "Title [+ English translation]", "Artist(s)"]) }}
+            {{ header(["Title", "Artist", "Played"]) }}
         </thead>
         <tbody>
-            {{ row(["?", "<a href='https://www.youtube.com/playlist?list=OLAK5uy_lNukJ7tBybfxEDbFGLz_KSehGwZLxeX70'>The entire Sunshower album</a>", "Couch"]) }}
-            {{ row(["Alt rock, city pop", "<a href='https://www.youtube.com/watch?v=BxqYUbNR-c0'>忘れられないの</a> [I can't forget]", "sakanaction"]) }}
-            {{ row(["Contemporary R&B", "<a href='https://www.youtube.com/watch?v=K58xo8lfRJc'>Secretly</a>", "Erika de Casier"]) }}
-            {{ row(["Country", "<a href='https://www.youtube.com/watch?v=TGkMYMxi-hw'>Deeper Well</a>", "Kacey Musgraves"]) }}
-            {{ row(["Video game music", "<a href='https://www.youtube.com/watch?v=v86DwYnVMPM&pp=ygUbcG9sbHV0ZWQgcGxhdG9vbiBwYXRoZmluZGVy'>Polluted Platoon Pathfinder</a>", "Felix Peaslee"]) }}
+            {% for track in lastfm.recentTracks %}
+                {{ row(["<a href='" + track.url + "'>" + track.name + "</a>", track.artist, "<time data-uts='" + track.uts + "'></time>"]) }}
+            {% endfor %}
         </tbody>
     </table>
-    <h4>Current favorite familiar tunes</h4>
-    <table>
-        <thead>
-            {{ header(["Genre", "Title [+ English translation]", "Artist(s)"]) }}
-        </thead>
-        <tbody>
-            {{ row(["Ballad", "<a href='https://www.youtube.com/watch?v=6xcY-NJGdzg'>소녀</a> [Little Girl]", "Lee Moon-sae"]) }}
-            {{ row(["Country rock", "<a href='https://www.youtube.com/watch?v=u1V8YRJnr4Q'>Have You Ever Seen the Rain</a>", "Creedence Clearwater Revival"]) }}
-            {{ row(["Funk", "<a href='https://www.youtube.com/watch?v=w9COHCrwNQs'>Smile Meditation</a>", "Vulfpeck"]) }}
-            {{ row(["Indie", "<a href='https://www.youtube.com/watch?v=k53_PziipaA'>KEEP IT UP</a>", "Rex Orange County"]) }}
-            {{ row(["Pop rock", "<a href='https://www.youtube.com/watch?v=4BJDNw7o6so'>Lisztomania</a>", "Phoenix"]) }}
-        </tbody>
-    </table>
+    <script>
+        document.querySelectorAll('time[data-uts]').forEach(function(el) {
+            var d = new Date(parseInt(el.dataset.uts) * 1000);
+            var now = new Date();
+            var hrs = d.getHours(), mins = d.getMinutes();
+            var time = (hrs % 12 || 12) + ':' + String(mins).padStart(2, '0') + (hrs < 12 ? 'am' : 'pm');
+            var label;
+            if (d.toDateString() === now.toDateString()) {
+                label = 'today, ' + time;
+            } else {
+                var yesterday = new Date(now);
+                yesterday.setDate(now.getDate() - 1);
+                if (d.toDateString() === yesterday.toDateString()) {
+                    label = 'yesterday, ' + time;
+                } else {
+                    label = d.toLocaleString(undefined, { month: 'short', day: 'numeric' }) + ', ' + time;
+                }
+            }
+            el.textContent = label;
+        });
+    </script>
+    {% else %}
+    <p>Hmm. This message is here because <em>someone</em> didn't setup their LastFM API key properly. Apologies. He's probably listening to musicals, jazz-reharmonized Pokemon music, or "Little Wonders" by Rob Thomas from the movie <em>Meet the Robinsons</em> </p>
+    {% endif %}
     <h3>Food</h3>
     <p>
         My favorite{{
